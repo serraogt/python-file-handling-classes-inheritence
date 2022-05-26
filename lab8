@@ -1,0 +1,23 @@
+
+class Count:
+    address = 'mytext.txt'
+    
+    def __init__(self, adress):
+        self.adress = adress
+
+    def calculatefreqs(self):
+        pass
+
+
+
+class ListCount(Count):
+
+    def calculatefreqs(self,address):
+        myobj=open(address)
+
+        wordarray=[]
+
+        for line in myobj:
+            words=line.split()
+            wordarray.append(words)
+            
