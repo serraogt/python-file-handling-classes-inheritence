@@ -1,7 +1,10 @@
+from abc import ABC
+import numpy as np
+#why
 
-class Count:
-    address = 'mytext.txt'
-    
+class Count(ABC):
+    address = ''
+
     def __init__(self, adress):
         self.adress = adress
 
@@ -9,15 +12,36 @@ class Count:
         pass
 
 
-
 class ListCount(Count):
 
-    def calculatefreqs(self,address):
-        myobj=open(address)
+    def calculatefreqs(self, address):
+        myobj=''
+        myobj = open(address)
 
-        wordarray=[]
+        mylist=[]
+        wordlist = []
+        wordlist = myobj.split()
 
-        for line in myobj:
-            words=line.split()
-            wordarray.append(words)
-            
+            for a in wordlist:
+                for b in mylist:
+                    if (a==b):
+                        freq+=1
+                        break
+                        # add to world file
+                    else
+                        
+            else:
+                pass
+
+           line.count()
+
+
+class DictCount(Count):
+    def calculatefreqs(self):
+
+
+
+class main:
+    asd=Count()
+    asd.address=input("what is the address?")
+    print (asd.adress)
