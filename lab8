@@ -5,43 +5,62 @@ import numpy as np
 class Count(ABC):
     address = ''
 
-    def __init__(self, adress):
-        self.adress = adress
+    def __init__(self, address):
+        self.address = address
 
-    def calculatefreqs(self):
+    def calculatefreqs(self,address):
         pass
 
 
 class ListCount(Count):
 
+    def __init__(self,address):
+        Count.__init__(self,address)
+        #why
     def calculatefreqs(self, address):
         myobj=''
         myobj = open(address)
 
         mylist=[]
         wordlist = []
-        wordlist = myobj.split()
+        wordlist = myobj.readline().split()
 
-            for a in wordlist:
-                for b in mylist:
-                    if (a==b):
-                        freq+=1
-                        break
-                        # add to world file
-                    else
-                        
-            else:
-                pass
+        for a in wordlist:
+            if a not in wordlist:
+                wordlist.append(a)
+        for a in range(0,len(wordlist)):
+            print(wordlist[a]+ myobj.count(wordlist[a]))
 
-           line.count()
+#karisti
+
+
+       # line.count()
 
 
 class DictCount(Count):
     def calculatefreqs(self):
+        def __init__(self, address):
+            Count.__init__(self, address)
+
+        def calculate_freqs(self, address):
+            file = open(address)
+            string = file.readline()
+            dict_words = {}
+            for b in string.split():
+                dict_words[b] = dict_words.get(b, 0) + 1
+            for key in dict_words:
+                print("{} : {}".format(key, dict_words[key]))
 
 
 
-class main:
-    asd=Count()
-    asd.address=input("what is the address?")
-    print (asd.adress)
+my_address = '/Users/serra/PycharmProjects/pythonProject2/strange'
+print("List")
+list_file = ListCount(my_address)
+list_file.calculatefreqs(my_address)
+print("Dictionary")
+dict_file = DictCount(my_address)
+dict_file.calculatefreqs(my_address)
+asd=Count()
+asd.address=input("what is the address?")
+print (asd.adress)
+
